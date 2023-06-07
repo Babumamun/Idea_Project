@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "200855860000",
+    "project_id": "insectdetection-18953",
+    "storage_bucket": "insectdetection-18953.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200855860000:android:8d6906aa88234c5c6d9d45",
+        "android_client_info": {
+          "package_name": "com.example.insect_detection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200855860000-i7jnkt5is3bn1smqmdmbted11a8fbgk4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.insect_detection",
+            "certificate_hash": "026a2b499c1082b05df3ae662bab87e5d5c51a70"
+          }
+        },
+        {
+          "client_id": "200855860000-9opcrrf7s3p9e265l9c7lform0igiuk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuU_ix8-BOXY9ulKkABIjU2-OHtW7OKfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200855860000-9opcrrf7s3p9e265l9c7lform0igiuk0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

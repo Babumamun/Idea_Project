@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nsu.dao.StudentDAO">
+    <select id="selectById" parameterType="String"
+            resultType="com.nsu.bean.Student">
+        select * from student where id=#{id}
+    </select>
+    <select id="selectAll" resultType="com.nsu.bean.Student">
+        select * from student
+    </select>
+    <select id="selectByName" parameterType="String" resultType="com.nsu.bean.Student">
+        select * from student where name like concat('%',#{name},'%')
+    </select>
+    <insert id="add" parameterType="com.nsu.bean.Student">
+        insert into student values(#{id},#{name},#{dept_name},#{tot_cred})
+    </insert>
+    <update id="update" parameterType="com.nsu.bean.Student">
+        update student set name=#{name},dept_name=#{dept_name},tot_cred=#{tot_cred} where id=#{id}
+    </update>
+    <delete id="delete" parameterType="String">
+        delete from student where id=#{id}
+    </delete>
+</mapper>

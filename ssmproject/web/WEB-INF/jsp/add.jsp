@@ -1,0 +1,149 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: mac
+  Date: 2021/6/3
+  Time: 10:31 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="product" class="com.nsu.bean.Product" scope="request"></jsp:useBean>
+<html>
+﻿<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>add_page</title>
+    <link href="<c:url value="/static/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/static/js/bootstrap.min.js" />" rel="stylesheet">
+    <link href="<c:url value="/static/css/bootstrap.css" />" rel="stylesheet">
+    <link href="<c:url value="/static/css/bootstrap-grid.css" />" rel="stylesheet">
+    <link href="<c:url value="/static/css/bootstrap-reboot.css" />" rel="stylesheet">
+    <link href="<c:url value="/static/js/jquery-3.5.1.min.js" />" rel="stylesheet">
+
+</head>
+<body>
+<!--<div class ="header">-->
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="${pageContext.request.contextPath}/homepage">
+                <img src="<c:url value="/static/images/mylogo%20.png"></c:url>" width="125px"></a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="${pageContext.request.contextPath}/homepage">Home</a></li>
+                <li><a href="${pageContext.request.contextPath}/products">Products</a></li>
+                <li><a href="">Add-Products</a></li>
+                <li><a href="${pageContext.request.contextPath}/prompt">Contact</a></li>
+                <li><a href="${pageContext.request.contextPath}/account">Account</a></li>
+
+            </ul>
+        </nav>
+        <a href="${pageContext.request.contextPath}/cart"><img src="<c:url value="/static/images/cart.png"></c:url>" width="30px" height="30px"></a>
+        <img src="<c:url value="/static/images/menu.png"></c:url>" class="menu-icon" onClick="menutoggle()" >
+    </div>
+
+</div>
+
+<%--add design--%>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-6">
+            <h1> Add Products</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <form role="form" class="form-horizontal" method="post" modelAttribute="product"
+                  enctype="multipart/form-data"
+                  action="${pageContext.request.contextPath}/upload2">
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="id">ID</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="id" name="id">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="title">title</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="title" name="title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="details">Deatils</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="details" name="details">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="price">Price</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="price" name="price">
+                    </div>
+                    <div>
+
+                        Choose a file:<input type="file" name="myfile">
+                            <%--<input type="submit" value="upload"> </form>--%>
+
+                    </div>
+
+                </div>
+                <div class="col-md-offset-5">
+                    <button  type="submit" class="btn btn-primary" value="upload">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<%--Footer--%>
+<div class ="footer">
+    <div class="container">
+
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="<c:url value="/static/images/play-store.png"></c:url>" alt="">
+                    <img src="<c:url value="/static/images/app-store.png"></c:url>" alt="">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="<c:url value="/static/images/mylogo%20.png"></c:url>">
+                <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr><!--horizontal line-->
+        <p class="copyright">Copyright 2021 - MAMUN MD AL</p>
+
+    </div>
+</div>
+
+</body>
+</html>

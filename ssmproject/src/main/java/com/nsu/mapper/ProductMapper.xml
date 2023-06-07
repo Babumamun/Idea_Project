@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nsu.dao.ProductDAO">
+    <select id="selectAll" resultType="com.nsu.bean.Product">
+        select * from products
+    </select>
+    <insert id="addProducts" parameterType="com.nsu.bean.Product" keyProperty="id" useGeneratedKeys="true">
+ insert into products values(#{id},#{title},#{details},#{price}) </insert>
+
+    <delete id="deleteProduct" parameterType="String">
+        delete from products where id=#{id}
+
+    </delete>
+
+    <select id="selectByName" parameterType="String" resultType="com.nsu.bean.Product">
+ select * from products where title like concat('%',#{title},'%') </select>
+
+    <select id="selectById" parameterType="String"
+            resultType="com.nsu.bean.Product">
+        select * from products where id=#{id}
+    </select>
+    <update id="update" parameterType="com.nsu.bean.Product">
+        update products set title=#{title},details=#{details},price=#{price} where id=#{id}
+    </update>
+</mapper>
